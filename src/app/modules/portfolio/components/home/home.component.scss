@@ -1,0 +1,48 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/variables';
+@use 'src/assets/style/z-indexes';
+
+:host {
+  display: block;
+  height: calc(76vh - #{variables.$header-height});
+  position: relative;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.dark-overlay {
+  background-color: colors.$black;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: z-indexes.$overlay-z-index;
+}
+
+.title-wrapper {
+  @extend %flex-center;
+
+  bottom: 16vh;
+  color: colors.$white;
+  flex-direction: column;
+  font-family: fonts.$font-rubik;
+  font-size: 54px;
+  font-weight: 500;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: z-indexes.$title-z-index;
+
+  .button {
+    margin-top: 24px
+  }
+}
