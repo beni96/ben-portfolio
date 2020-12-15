@@ -8,6 +8,20 @@ body {
   margin: 0;
 }
 
+.title {
+  color: colors.$white;
+  font-family: fonts.$font-rubik;
+  font-weight: 500;
+
+  &.lg {
+    font-size: 54px;
+  }
+
+  &.md {
+    font-size: 36px;
+  }
+}
+
 .button {
   @extend %flex-center;
 

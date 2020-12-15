@@ -1,0 +1,56 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+@use 'src/assets/style/variables';
+@use 'src/assets/style/z-indexes';
+
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wrapper {
+  background-color: colors.$primary-color;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 54px;
+  max-width: 1048px;
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  .paragraph {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    .description {
+      color: colors.$secondary-color;
+      font-family: fonts.$font-rubik;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+img {
+  box-shadow: shadows.$img-shadow;
+  border-radius: 50%;
+  height: 264px;
+  margin-inline-end: 42px;
+  width: 264px;
+}

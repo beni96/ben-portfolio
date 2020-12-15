@@ -6,7 +6,7 @@
 
 :host {
   display: block;
-  height: calc(76vh - #{variables.$header-height});
+  height: calc(100vh - #{variables.$header-height});
   position: relative;
   width: 100%;
 }
@@ -31,11 +31,7 @@ img {
   @extend %flex-center;
 
   bottom: 16vh;
-  color: colors.$white;
   flex-direction: column;
-  font-family: fonts.$font-rubik;
-  font-size: 54px;
-  font-weight: 500;
   left: 0;
   position: absolute;
   right: 0;
