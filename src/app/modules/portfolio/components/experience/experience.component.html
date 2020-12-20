@@ -1,0 +1,10 @@
+<span class="title md">Experience</span>
+<div class="cards-wrapper">
+  <app-experience-card
+    *ngFor="let card of cards"
+    [jobTitle]="card.jobTitle"
+    [companyName]="card.companyName"
+    [date]="card.date"
+    [contentItems]="card.contentItems"
+  ></app-experience-card>
+</div>

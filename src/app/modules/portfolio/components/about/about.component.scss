@@ -6,14 +6,12 @@
 @use 'src/assets/style/z-indexes';
 
 :host {
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  @extend %flex-center;
 }
 
 .about-wrapper {
   background-color: colors.$primary-color;
-  border-radius: 10px;
+  border-radius: 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -21,6 +19,7 @@
   max-width: 1048px;
 
   .title {
+    color: colors.$white;
     margin-bottom: 16px;
   }
 

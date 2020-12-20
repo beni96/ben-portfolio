@@ -1,0 +1,16 @@
+<div class="circle-wrapper">
+  <div class="border"></div>
+  <div class="circle"></div>
+  <div class="border"></div>
+</div>
+<div class="card-wrapper">
+  <div class="job-wrapper">
+    <span class="company-name">{{ companyName }}</span>
+    <span *ngIf="jobTitle">/</span>
+    <span *ngIf="jobTitle" class="job-title">{{ jobTitle }}</span>
+  </div>
+  <span class="date">{{ date }}</span>
+  <ul>
+    <li *ngFor="let item of contentItems" [innerHTML]="item"></li>
+  </ul>
+</div>

@@ -1,8 +1,17 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
 :host {
-  display: block;
+  @extend %flex-center;
+
+  flex-direction: column;
 }
 
-app-about {
-  border-radius: 10px;
-  margin: 42px;
+app-about,
+app-experience {
+  box-sizing: border-box;
+  padding: 110px 42px;
+  width: 100%;
 }

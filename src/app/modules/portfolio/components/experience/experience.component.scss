@@ -1,0 +1,21 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
+:host {
+  background-color: colors.$secondary-color-strong;
+  display: flex;
+  justify-content: center;
+}
+
+
+.title {
+  color: colors.$primary-color;
+  margin-inline-end: 92px;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+}

@@ -38,6 +38,11 @@ img {
   top: 0;
   z-index: z-indexes.$title-z-index;
 
+  .title {
+    color: colors.$white;
+    text-align: center;
+  }
+
   .button {
     margin-top: 24px
   }
