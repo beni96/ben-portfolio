@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ExperienceCardComponent } from './components/experience-card/experience-card.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { SkillCardComponent } from './components/skill-card/skill-card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
     HeaderComponent,
     HomeComponent,
     PortfolioComponent,
+    SkillCardComponent,
+    SkillsComponent,
   ],
   imports: [CommonModule, TranslateModule],
 })

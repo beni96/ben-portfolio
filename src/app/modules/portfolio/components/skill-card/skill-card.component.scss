@@ -1,0 +1,38 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
+a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: unset;
+  width: 214px;
+
+  img {
+    border-radius: 8px;
+    box-sizing: border-box;
+    height: 120px;
+    margin-bottom: 16px;
+    width: 120px;
+  }
+
+  .logo-name {
+    color: colors.$primary-color;
+    font-family: fonts.$font-rubik;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  .logo-subtitle {
+    color: colors.$primary-color-light;
+    font-family: fonts.$font-rubik;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+<span class="title lg">Skills</span>
+<div class="skills-wrapper">
+  <app-skill-card
+    *ngFor="let skill of skills"
+    [link]="skill.link"
+    [logoUrl]="skill.logoUrl"
+    [title]="skill.title"
+    [subtitle]="skill.subtitle"
+    [backgroundColor]="skill.backgroundColor"
+  ></app-skill-card>
+</div>
+
+

@@ -1,0 +1,31 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
+:host {
+  @extend %flex-center;
+
+  flex-direction: column;
+}
+
+.title {
+  color: colors.$primary-color;
+  margin-bottom: 92px;
+}
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 128px;
+}
+
+app-skill-card {
+  position: relative;
+  bottom: 0px;
+  transition: 0.15s bottom ease;
+
+  &:hover {
+    bottom: 6px;
+  }
+}
