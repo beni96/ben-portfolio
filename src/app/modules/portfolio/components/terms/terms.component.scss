@@ -1,0 +1,40 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+@use 'src/assets/style/variables';
+@use 'src/assets/style/z-indexes';
+
+:host {
+  @extend %flex-center;
+
+  background-color: colors.$primary-color-strong;
+  color: colors.$white;
+  padding: 24px;
+  width: 100%;
+}
+
+span {
+  font-family: fonts.$font-rubik;
+  font-size: 16px;
+  line-height: 24px;
+
+  &.seperator {
+    margin: 0 12px;
+  }
+}
+
+.fab {
+  font-size: 24px;
+
+  &:first-child {
+    margin-inline-end: 12px;
+  }
+}
+
+a {
+  color: colors.$white;
+}
+
+
+

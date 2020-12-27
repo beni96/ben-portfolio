@@ -11,6 +11,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillCardComponent } from './components/skill-card/skill-card.component';
 import { TextFieldComponent } from './components/text-field/text-field.component';
+import { TermsComponent } from './components/terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TextFieldComponent } from './components/text-field/text-field.component
     SkillCardComponent,
     SkillsComponent,
     TextFieldComponent,
+    TermsComponent,
   ],
   imports: [CommonModule, TranslateModule],
 })
