@@ -1,0 +1,33 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
+:host {
+  align-items: center;
+  background-color: colors.$primary-color;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  max-width: 920px;
+}
+
+.title {
+  color: colors.$white;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  width: 100%;
+
+  app-text-field {
+    margin-bottom: 16px;
+  }
+}

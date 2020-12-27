@@ -5,16 +5,17 @@ import { PortfolioComponent } from './portfolio.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { ExperienceCardComponent } from './components/experience-card/experience-card.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillCardComponent } from './components/skill-card/skill-card.component';
+import { TextFieldComponent } from './components/text-field/text-field.component';
 
 @NgModule({
   declarations: [
     AboutComponent,
-    ContactUsComponent,
+    ContactComponent,
     ExperienceCardComponent,
     ExperienceComponent,
     HeaderComponent,
@@ -22,6 +23,7 @@ import { SkillCardComponent } from './components/skill-card/skill-card.component
     PortfolioComponent,
     SkillCardComponent,
     SkillsComponent,
+    TextFieldComponent,
   ],
   imports: [CommonModule, TranslateModule],
 })

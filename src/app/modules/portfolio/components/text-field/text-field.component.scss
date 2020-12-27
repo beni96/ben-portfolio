@@ -1,0 +1,75 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+
+@mixin input-common {
+  background-color: colors.$primary-color-strong;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: colors.$secondary-color;
+  font-family: fonts.$font-rubik;
+  font-size: 16px;
+
+  outline: none;
+  transition: 0.2s border-color ease-in;
+
+  &:focus-within {
+    border: 2px solid colors.$bg-purple;
+  }
+
+  &::placeholder {
+    color: colors.$grey-color;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  label {
+    color: colors.$bg-purple;
+    font-family: fonts.$font-rubik;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 6px;
+  }
+
+  .error-message {
+    color: colors.$bg-purple;
+    font-family: fonts.$font-rubik;
+    font-size: 14px;
+    line-height: 24px;
+    margin-inline-start: 4px;
+    margin-top: 4px;
+  }
+
+  input,
+  textarea {
+    @include input-common();
+
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  textarea {
+    @include input-common();
+
+    height: 160px;
+    padding: 12px;
+    resize: none;
+  }
+
+  &.error {
+    label {
+      color: colors.$red-warning;
+    }
+
+    input,
+    textarea {
+      border: 2px solid colors.$red-warning;
+    }
+  }
+}

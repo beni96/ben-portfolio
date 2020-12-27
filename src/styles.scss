@@ -37,11 +37,35 @@ body {
   text-align: center;
   user-select: none;
   white-space: nowrap;
+  width: inherit;
 
   &.primary {
     background-color: colors.$primary-color;
     border: 2px solid colors.$secondary-color;
     color: colors.$secondary-color;
+
+    &:hover,
+    &:focus {
+      background-color: colors.$primary-color-strong;
+    }
+
+    &:active {
+      background-color: colors.$black;
+    }
+  }
+
+  &.secondary {
+    background-color: colors.$bg-purple-light;
+    color: colors.$primary-color-strong;
+
+    &:hover,
+    &:focus {
+      background-color: colors.$bg-purple;
+    }
+
+    &:active {
+      background-color: colors.$bg-purple-strong;
+    }
   }
 
   &.lg {
@@ -50,15 +74,6 @@ body {
     height: 42px;
     line-height: 24px;
     padding: 0px 20px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: colors.$primary-color-strong;
-  }
-
-  &:active {
-    background-color: colors.$black;
   }
 }
 

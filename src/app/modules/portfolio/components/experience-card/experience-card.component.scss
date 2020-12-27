@@ -95,3 +95,10 @@
     opacity: 0;
   }
 }
+
+:host-context([dir='rtl']) {
+  .circle-wrapper {
+    left: unset;
+    right: 0;
+  }
+}
