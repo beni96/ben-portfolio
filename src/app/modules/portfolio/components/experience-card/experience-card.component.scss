@@ -29,11 +29,19 @@
   }
 
   .job-wrapper {
+    align-items: center;
     display: flex;
     font-size: 20px;
     letter-spacing: 0.4px;
     line-height: 24px;
     margin-bottom: 12px;
+
+    img {
+      border-radius: 50%;
+      height: 32px;
+      margin-inline-end: 12px;
+      width: 32px;
+    }
 
     .company-name {
       font-weight: 500;

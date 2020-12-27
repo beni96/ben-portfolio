@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./experience-card.component.scss']
 })
 export class ExperienceCardComponent {
+  @Input() companyUrl: string;
+  @Input() companyLogoUrl: string;
   @Input() jobTitle: string;
   @Input() companyName: string;
   @Input() date: string;

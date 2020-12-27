@@ -5,6 +5,9 @@
 </div>
 <div class="card-wrapper">
   <div class="job-wrapper">
+    <a *ngIf="companyLogoUrl" [href]="companyUrl" target="blank">
+      <img [src]="companyLogoUrl" />
+    </a>
     <span class="company-name">{{ companyName }}</span>
     <span *ngIf="jobTitle">/</span>
     <span *ngIf="jobTitle" class="job-title">{{ jobTitle }}</span>

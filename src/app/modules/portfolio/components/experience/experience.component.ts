@@ -33,9 +33,27 @@ export class ExperienceComponent {
   contentIdf = ['Full service, worked with ERP systems.'];
 
   cards: ExperienceCard[] = [
-    { jobTitle: 'Front End Developer', companyName: 'Spectory Ltd.', date: 'Feb 2019 - Present', contentItems: this.contentSpectory },
-    { companyName: 'Google', date: 'Feb 2019 - Jan 2020', contentItems: this.contentGoogle },
-    { companyName: 'Waze', date: 'Jan 2020 - Present', contentItems: this.contentWaze },
+    {
+      companyUrl: 'https://spectory.com',
+      companyLogoUrl: 'assets/images/spectory.png',
+      jobTitle: 'Front End Developer',
+      companyName: 'Spectory Ltd.',
+      date: 'Feb 2019 - Present',
+      contentItems: this.contentSpectory
+    },
+    {
+      companyUrl: 'https://about.google',
+      companyLogoUrl: 'assets/icons/google.svg',
+      companyName: 'Google', date: 'Feb 2019 - Jan 2020',
+      contentItems: this.contentGoogle
+    },
+    {
+      companyUrl: 'https://waze.com',
+      companyLogoUrl: 'assets/icons/waze.svg',
+      companyName: 'Waze',
+      date: 'Jan 2020 - Present',
+      contentItems: this.contentWaze
+    },
     { jobTitle: 'QA specialist', companyName: 'IDF', date: 'Mar 2016 - Nov 2018', contentItems: this.contentIdf },
   ];
 }

@@ -2,6 +2,8 @@
 <div class="cards-wrapper">
   <app-experience-card
     *ngFor="let card of cards"
+    [companyUrl]="card.companyUrl"
+    [companyLogoUrl]="card.companyLogoUrl"
     [jobTitle]="card.jobTitle"
     [companyName]="card.companyName"
     [date]="card.date"
