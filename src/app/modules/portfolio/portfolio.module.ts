@@ -12,6 +12,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillCardComponent } from './components/skill-card/skill-card.component';
 import { TextFieldComponent } from './components/text-field/text-field.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import { TermsComponent } from './components/terms/terms.component';
     TextFieldComponent,
     TermsComponent,
   ],
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, BrowserAnimationsModule],
 })
 export class PortfolioModule {}

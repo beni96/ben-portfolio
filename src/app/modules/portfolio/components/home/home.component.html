@@ -1,8 +1,7 @@
 <img src="assets/images/code.jpg" />
 <div class="dark-overlay"></div>
 <div class="title-wrapper">
-  <span class="title lg">Ben Golan</span>
-  <span class="title lg">Welcome to My portfolio</span>
-  <button class="button primary lg">About me</button>
+  <span #title class="title lg" *ngFor="let title of titles"></span>
+  <button class="button primary lg" [@displayButton]="shouldDisplayButton ? 'rotate' : 'hidden'">About me</button>
 </div>
 

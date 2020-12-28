@@ -40,10 +40,12 @@ img {
 
   .title {
     color: colors.$white;
+    height: 65px;
     text-align: center;
   }
 
   .button {
-    margin-top: 24px
+    margin-top: 24px;
+    position: relative;
   }
 }
