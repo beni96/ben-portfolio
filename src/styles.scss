@@ -4,6 +4,11 @@
 @use 'src/assets/style/variables';
 @use 'src/assets/style/z-indexes';
 
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }

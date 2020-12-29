@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +7,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() isSticky = false;
+  @Input() currentPage = 0;
+  @Output() pageClicked = new EventEmitter<number>();
 
-  pages: string[] = ['Home', 'About', 'Contact'];
+  pages: string[] = ['Home', 'About', 'Experience', 'Skills', 'Contact'];
   isScrolled = false;
 
   ngOnInit() {
     document.addEventListener('scroll', () => {
       return this.isScrolled = window.pageYOffset > 0;
     });
+  }
+
+  onPageClick(index: number) {
+    this.currentPage = index;
+    this.pageClicked.emit(index);
+  }
+
+  isCurrentPage(index: number) {
+    return index === this.currentPage;
   }
 }

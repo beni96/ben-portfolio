@@ -1,5 +1,5 @@
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-import { AfterViewInit, Component, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +33,8 @@ export class HomeComponent implements AfterViewInit {
   shouldDisplayButton = false;
   interval: any;
 
+  @Output() aboutClicked = new EventEmitter<void>();
+
   @ViewChildren('title') titleElements;
 
   ngAfterViewInit() {
@@ -57,5 +59,9 @@ export class HomeComponent implements AfterViewInit {
       element.nativeElement.innerHTML = elementInner + letters[letterIndex];
       letterIndex++;
     }, 100);
+  }
+
+  onAboutClick() {
+    this.aboutClicked.emit();
   }
 }
