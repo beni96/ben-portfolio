@@ -13,6 +13,7 @@ import { SkillCardComponent } from './components/skill-card/skill-card.component
 import { TextFieldComponent } from './components/text-field/text-field.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TextFieldComponent,
     TermsComponent,
   ],
-  imports: [CommonModule, TranslateModule, BrowserAnimationsModule],
+  imports: [CommonModule, TranslateModule, BrowserAnimationsModule, ReactiveFormsModule],
 })
 export class PortfolioModule {}
