@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChildren } from '@angular/core';
 
 const HOME_SECTIONS_INDEX = 0;
 const ABOUT_SECTIONS_INDEX = 1;
@@ -8,10 +8,25 @@ const ABOUT_SECTIONS_INDEX = 1;
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit {
   aboutIndex = ABOUT_SECTIONS_INDEX;
+  pagesScrollHeight: number[] = [];
+  currentPage = 0;
 
   @ViewChildren('page') pages;
+
+  ngAfterViewInit() {
+    this.pages.toArray().forEach((page, index) => {
+      const previousPageScrollHeight = index ? this.pagesScrollHeight[index - 1] : 0;
+      const pageScrollHeight = page.nativeElement.scrollHeight + previousPageScrollHeight;
+      this.pagesScrollHeight.push(pageScrollHeight);
+    });
+
+    document.addEventListener('scroll', () => {
+      const scrollTop = document.scrollingElement.scrollTop;
+      this.currentPage = this.pagesScrollHeight.findIndex(pageScrollHeight => pageScrollHeight > scrollTop);
+    });
+  }
 
   scrollToPage(index: number) {
     const pages: ElementRef[] = this.pages.toArray();

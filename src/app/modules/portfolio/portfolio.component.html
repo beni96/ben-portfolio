@@ -1,4 +1,4 @@
-<app-header [isSticky]="true" (pageClicked)="scrollToPage($event)"></app-header>
+<app-header [isSticky]="true" [currentPage]="currentPage" (pageClicked)="scrollToPage($event)"></app-header>
 <div #page>
   <app-home (aboutClicked)="scrollToPage(aboutIndex)"></app-home>
 </div>
