@@ -1,23 +1,26 @@
 <span class="title md">Contact</span>
 <form [formGroup]="form">
   <app-text-field
+    ngDefaultControl
     formControlName="name"
     label="Name"
     placeholder="Enter your name.."
     [errorMessage]="errorMessages?.name"
   ></app-text-field>
   <app-text-field
+    ngDefaultControl
     formControlName="email"
     label="Email"
     placeholder="Enter your email.."
     [errorMessage]="errorMessages?.email"
   ></app-text-field>
   <app-text-field
+    ngDefaultControl
     formControlName="message"
     isTextarea="true"
     label="Message"
     placeholder="Write a message.."
-    [errorMessage]="errorMessages?.email"
+    [errorMessage]="errorMessages?.message"
   ></app-text-field>
 </form>
 <button class="button secondary lg" type="submit" (click)="onSubmit()">Submit</button>

@@ -5,7 +5,8 @@ type FIELD_NAME_TYPE = 'name' | 'email' | 'message';
 
 const ERRORS_MESSAGES = {
   name: { required: 'Required' },
-  email: { required: 'Required', email: 'Invalid email' }
+  email: { required: 'Required', pattern: 'Invalid email' },
+  message: { required: 'Required' },
 };
 
 const EMAIL_FORMAT = '^[\\w]+(([\\w-+\\.]+[\\w])*)+@([\\w-]+\\.)+[\\w-]+[\\w-]*$';
@@ -19,7 +20,7 @@ export class ContactComponent implements OnInit {
   form: FormGroup;
   formControls: { [key: string]: FormControl };
   fieldNames: FIELD_NAME_TYPE[] = ['name', 'email', 'message'];
-  errorMessages: { [key: string]: string };
+  errorMessages: { [key: string]: string } = {};
 
   constructor(private formbuilder: FormBuilder) {}
 
@@ -36,5 +37,22 @@ export class ContactComponent implements OnInit {
     };
   }
 
-  onSubmit() {}
+  onSubmit() {
+    if (this.validateForm()) {
+      // TODO(beni96): Send the message.
+    }
+  }
+
+  validateForm(): boolean {
+    this.errorMessages = {};
+    this.fieldNames.forEach(fieldName => {
+      const errors = this.formControls[fieldName].errors;
+      if (errors) {
+        const fieldErrorNames = Object.keys(errors);
+        const errorName = fieldErrorNames[0];
+        this.errorMessages[fieldName] = ERRORS_MESSAGES[fieldName][errorName];
+      }
+    });
+    return this.form.valid;
+  }
 }
