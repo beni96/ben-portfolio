@@ -14,6 +14,8 @@ import { TextFieldComponent } from './components/text-field/text-field.component
 import { TermsComponent } from './components/terms/terms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SkillsComponent,
     TextFieldComponent,
     TermsComponent,
+    SnackbarComponent,
   ],
-  imports: [CommonModule, TranslateModule, BrowserAnimationsModule, ReactiveFormsModule],
+  imports: [CommonModule, TranslateModule, BrowserAnimationsModule, ReactiveFormsModule, HttpClientModule],
 })
 export class PortfolioModule {}

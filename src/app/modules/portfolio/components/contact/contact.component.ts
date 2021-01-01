@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { SendEmailRequest, SendEmailResponse } from '../../interfaces/contact';
+import { ContactService } from '../../services/contact-form.service';
 
 type FIELD_NAME_TYPE = 'name' | 'email' | 'message';
 
@@ -21,8 +24,10 @@ export class ContactComponent implements OnInit {
   formControls: { [key: string]: FormControl };
   fieldNames: FIELD_NAME_TYPE[] = ['name', 'email', 'message'];
   errorMessages: { [key: string]: string } = {};
+  fieldsValue = '';
+  snackbarLabelSubject$ = new Subject<string>();
 
-  constructor(private formbuilder: FormBuilder) {}
+  constructor(private formbuilder: FormBuilder, private contactService: ContactService) {}
 
   ngOnInit() {
     this.generateControls();
@@ -39,7 +44,22 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     if (this.validateForm()) {
-      // TODO(beni96): Send the message.
+      const body: SendEmailRequest = {
+        _subject: this.formControls.name.value,
+        email: this.formControls.email.value,
+        message: this.formControls.message.value
+      };
+      const request = this.contactService.generateRequest(body);
+      this.contactService.sendRequest(request).subscribe(
+        (response: SendEmailResponse) => {
+          if (response.ok) {
+            this.form.reset();
+          }
+          const snackbarLabel = response.ok ? 'Message sent' : 'Oops something went wrong';
+          return this.snackbarLabelSubject$.next(snackbarLabel);
+        },
+        () => this.snackbarLabelSubject$.next('Oops something went wrong'),
+      );
     }
   }
 

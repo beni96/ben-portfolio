@@ -3,6 +3,6 @@
     {{ label }}
     <span *ngIf="errorMessage"> - *{{ errorMessage }}</span>
   </label>
-  <input *ngIf="!isTextarea" [placeholder]="placeholder" />
-  <textarea *ngIf="isTextarea" [placeholder]="placeholder"></textarea>
+  <input *ngIf="!isTextarea" [value]="value" [placeholder]="placeholder" />
+  <textarea *ngIf="isTextarea" [value]="value" [placeholder]="placeholder"></textarea>
 </div>

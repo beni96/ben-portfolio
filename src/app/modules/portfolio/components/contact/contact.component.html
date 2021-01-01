@@ -1,10 +1,11 @@
 <span class="title md">Contact</span>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <app-text-field
     ngDefaultControl
     formControlName="name"
     label="Name"
     placeholder="Enter your name.."
+    [value]="formControls.name.value"
     [errorMessage]="errorMessages?.name"
   ></app-text-field>
   <app-text-field
@@ -12,6 +13,7 @@
     formControlName="email"
     label="Email"
     placeholder="Enter your email.."
+    [value]="formControls.email.value"
     [errorMessage]="errorMessages?.email"
   ></app-text-field>
   <app-text-field
@@ -20,7 +22,10 @@
     isTextarea="true"
     label="Message"
     placeholder="Write a message.."
+    [value]="formControls.message.value"
     [errorMessage]="errorMessages?.message"
   ></app-text-field>
+  <button class="button secondary lg" type="submit">Submit</button>
 </form>
-<button class="button secondary lg" type="submit" (click)="onSubmit()">Submit</button>
+
+<app-snackbar [snackbarLabel$]="snackbarLabelSubject$"></app-snackbar>

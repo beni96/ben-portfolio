@@ -1,0 +1,36 @@
+@use 'src/assets/style/colors';
+@use 'src/assets/style/fonts';
+@use 'src/assets/style/layouts';
+@use 'src/assets/style/shadows';
+@use 'src/assets/style/z-indexes';
+
+
+:host {
+  @extend %flex-center;
+
+  bottom: 16px;
+  height: 48px;
+  left: 16px;
+  min-width: 64px;
+  position: absolute;
+  z-index: z-indexes.$snackbar-z-index;
+}
+
+.snackbar {
+  background-color: colors.$black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: colors.$bg-purple-strong;
+  font-family: fonts.$font-rubik;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100%;
+  padding: 16px;
+}
+
+:host-context([dir='rtl']) {
+  .circle-wrapper {
+    left: unset;
+    right: 16px;
+  }
+}

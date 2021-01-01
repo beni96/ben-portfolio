@@ -10,4 +10,5 @@ export class TextFieldComponent {
   @Input() label: string;
   @Input() placeholder: string;
   @Input() errorMessage: string;
+  @Input() value: string;
 }
