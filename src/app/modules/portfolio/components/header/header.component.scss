@@ -3,6 +3,7 @@
 @use 'src/assets/style/shadows';
 @use 'src/assets/style/z-indexes';
 @use 'src/assets/style/variables';
+@use 'src/assets/style/layouts';
 
 :host {
   display: block;
@@ -23,6 +24,7 @@
   height: variables.$header-height;
   justify-content: space-between;
   padding: 16px 24px;
+  position: relative;
   transition: 0.1s box-shadow ease-in;
   width: 100%;
   z-index: z-indexes.$header-z-index;
@@ -68,6 +70,71 @@
       color: colors.$black;
       font-size: 18px;
       font-weight: 600;
+    }
+  }
+
+  .fa-caret-down {
+    align-items: center;
+    border-radius: 4px;
+    border: 2px solid colors.$primary-color;
+    color: colors.$primary-color;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    height: 24px;
+    justify-content: center;
+    outline: none;
+    width: 24px;
+
+    &:hover,
+    &:focus {
+      background-color: colors.$primary-color;
+      color: colors.$secondary-color;
+    }
+
+    &:active {
+      background-color: colors.$primary-color-strong;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .header {
+    .fa-caret-down {
+      display: flex;
+    }
+
+    .pages-wrapper {
+      background-color: colors.$secondary-color;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      left: 0;
+      padding: 0 16px;
+      position: absolute;
+      top: variables.$header-height;
+      visibility: hidden;
+      width: 100%;
+
+      .page {
+        background-color: colors.$secondary-color;
+        border-bottom: 1px solid colors.$grey-color-light;
+        line-height: 40px;
+        margin-inline-start: unset;
+        padding: 14px 0;
+        text-align: center;
+        width: 100%;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+      }
+
+      &.menu-opened {
+        height: 345px;
+        visibility: visible;
+      }
     }
   }
 }

@@ -9,7 +9,8 @@
   flex-direction: column;
 }
 
-div {
+* {
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -17,6 +18,32 @@ app-about,
 app-experience,
 app-skills,
 app-contact {
-  box-sizing: border-box;
   padding: 110px;
+}
+
+@media only screen and (max-width: 998px) {
+  app-about,
+  app-experience,
+  app-skills,
+  app-contact {
+    padding: 110px 64px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  app-about,
+  app-experience,
+  app-skills,
+  app-contact {
+    padding: 92px 42px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  app-about,
+  app-experience,
+  app-skills,
+  app-contact {
+    padding: 72px 24px;
+  }
 }

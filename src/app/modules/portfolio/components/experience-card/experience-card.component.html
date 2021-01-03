@@ -8,9 +8,11 @@
     <a *ngIf="companyLogoUrl" [href]="companyUrl" target="blank">
       <img [src]="companyLogoUrl" />
     </a>
-    <span class="company-name">{{ companyName }}</span>
-    <span *ngIf="jobTitle">/</span>
-    <span *ngIf="jobTitle" class="job-title">{{ jobTitle }}</span>
+    <div class="company-name-wrapper">
+      <span class="company-name">{{ companyName }}</span>
+      <span *ngIf="jobTitle" class="seperator">/</span>
+      <span *ngIf="jobTitle" class="job-title">{{ jobTitle }}</span>
+    </div>
   </div>
   <span class="date">{{ date }}</span>
   <ul>

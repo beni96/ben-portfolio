@@ -36,5 +36,20 @@ a {
   color: colors.$white;
 }
 
+@media only screen and (max-width: 500px) {
+  :host {
+    flex-direction: column;
+  }
 
+  span {
+    margin-bottom: 12px;
+  }
 
+  .links {
+    margin-top: 4px;
+  }
+
+  .seperator {
+    display: none;
+  }
+}

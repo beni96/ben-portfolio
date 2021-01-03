@@ -53,3 +53,25 @@ img {
   margin-inline-end: 42px;
   width: 264px;
 }
+
+
+@media only screen and (max-width: 998px) {
+  :host {
+    background-color: colors.$primary-color;
+    flex-direction: column;
+  }
+
+  .about-wrapper {
+    padding: 42px 0 0;
+  }
+
+  img {
+    margin-inline-end: unset;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .about-wrapper .paragraph .description {
+    font-size: 18px;
+  }
+}

@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   font-family: fonts.$font-rubik;
-  margin: 24px 48px 24px;
+  margin: 24px 48px;
   padding: 24px;
   transition: 0.1s box-shadow ease-in;
   width: 720px;
@@ -36,11 +36,20 @@
     line-height: 24px;
     margin-bottom: 12px;
 
-    img {
-      border-radius: 50%;
-      height: 32px;
-      margin-inline-end: 12px;
-      width: 32px;
+    a {
+      align-items: center;
+      display: flex;
+
+      img {
+        border-radius: 50%;
+        height: 32px;
+        margin-inline-end: 12px;
+        width: 32px;
+      }
+    }
+
+    .company-name-wrapper {
+      display: flex;
     }
 
     .company-name {
@@ -108,5 +117,54 @@
   .circle-wrapper {
     left: unset;
     right: 0;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  :host {
+    padding-inline-start: 32px;
+    width: 100%;
+  }
+
+  .card-wrapper {
+    margin: 12px 0;
+    width: 100%;
+
+    .company-name-wrapper {
+      flex-direction: column;
+
+      .company-name {
+        font-size: 18px;
+      }
+
+      .seperator {
+        display: none;
+      }
+
+      .job-title {
+        font-size: 16px;
+        margin-inline-start: unset;
+        margin-top: 4px;
+      }
+    }
+
+    .date {
+      font-size: 16px;
+    }
+
+    ul {
+      margin: unset;
+      padding: 0 0 0 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  :host {
+    padding-inline-start: unset;
+  }
+
+  .circle-wrapper {
+    display: none;
   }
 }

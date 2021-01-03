@@ -16,8 +16,8 @@
 
 .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 128px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 app-skill-card {
@@ -27,5 +27,27 @@ app-skill-card {
 
   &:hover {
     bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .title {
+    margin-bottom: 72px;
+  }
+
+  .skills-wrapper {
+    gap: 72px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .title {
+    margin-bottom: 42px;
+  }
+
+  .skills-wrapper {
+    gap: 42px;
+    grid-template-columns: repeat(1, 1fr);
   }
 }

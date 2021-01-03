@@ -1,7 +1,7 @@
 <div *ngIf="isSticky && isScrolled" class="header-sticky-background"></div>
 <div class="header" [ngClass]="{ sticky: isSticky && isScrolled }">
   <span class="logo">Ben Golan</span>
-  <div class="pages-wrapper">
+  <div class="pages-wrapper" [ngClass]="{ 'menu-opened': isMenuOpened }">
     <span
       *ngFor="let page of pages; let index=index"
       class="page"
@@ -11,4 +11,5 @@
       {{ page }}
     </span>
   </div>
+  <i class="fas fa-caret-down" tabindex="1" (click)="toggleMenu()"></i>
 </div>

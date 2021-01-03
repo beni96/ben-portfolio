@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   pages: string[] = ['Home', 'About', 'Experience', 'Skills', 'Contact'];
   isScrolled = false;
+  isMenuOpened = false;
 
   ngOnInit() {
     document.addEventListener('scroll', () => {
@@ -26,5 +27,9 @@ export class HeaderComponent implements OnInit {
 
   isCurrentPage(index: number) {
     return index === this.currentPage;
+  }
+
+  toggleMenu() {
+    this.isMenuOpened = !this.isMenuOpened;
   }
 }
