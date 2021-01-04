@@ -1,0 +1,26 @@
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ButtonComponent } from './button.component';
+
+describe('ButtonComponent', () => {
+  let component: ButtonComponent;
+  let debugElement: DebugElement;
+  let fixture: ComponentFixture<ButtonComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ButtonComponent],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ButtonComponent);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

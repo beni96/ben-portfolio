@@ -22,7 +22,7 @@ describe('workspace-project App', () => {
   it('should display home titles after type animation', () => {
     browser.sleep(500);
     const titles = element.all(by.css('app-home .title'));
-    expect(titles.first().getText()).toEqual(NAME_TITLE)
+    expect(titles.first().getText()).toEqual(NAME_TITLE);
     expect(titles.get(1).getText()).toBe(WELCOME_TITLE);
   });
 
@@ -65,7 +65,7 @@ describe('workspace-project App', () => {
   });
 
   it('should change current page when the using scrolling into a page', () => {
-    browser.executeScript('return window.scrollTo(0, 1500);')
+    browser.executeScript('return window.scrollTo(0, 1500);');
     browser.sleep(1000);
 
     const currentPage = element(by.css('app-header .page.current-page'));
@@ -104,7 +104,7 @@ describe('workspace-project App', () => {
 
   it('should set red border to empty input field on validating', () => {
     const inputField = element.all(by.css('app-text-field input')).first();
-    browser.executeScript('document.body.querySelector("app-contact button").click();')
+    browser.executeScript('document.body.querySelector("app-contact button").click();');
     browser.sleep(1000);
     expect(inputField.getCssValue('border-color')).toEqual(WARNING_COLOR);
   });

@@ -25,7 +25,7 @@
     [value]="formControls.message.value"
     [errorMessage]="errorMessages?.message"
   ></app-text-field>
-  <button class="button secondary lg" type="submit">Submit</button>
+  <app-button label="Submit" color="secondary" size="lg" type="submit">Submit</app-button>
 </form>
 
 <app-snackbar [snackbarLabel$]="snackbarLabelSubject$"></app-snackbar>

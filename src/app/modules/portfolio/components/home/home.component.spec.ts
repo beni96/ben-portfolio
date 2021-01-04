@@ -42,7 +42,7 @@ describe('HomeComponent', () => {
   }));
 
   it('should emit an event on clicking the about button', () => {
-    const aboutButton = debugElement.query(By.css('button'));
+    const aboutButton = debugElement.query(By.css('app-button'));
     aboutButton.triggerEventHandler('click', null);
     expect(component.aboutClicked.emit).toHaveBeenCalled();
   });

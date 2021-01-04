@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     TextFieldComponent,
     TermsComponent,
     SnackbarComponent,
+    ButtonComponent,
   ],
   imports: [CommonModule, TranslateModule, BrowserAnimationsModule, ReactiveFormsModule, HttpClientModule],
 })
