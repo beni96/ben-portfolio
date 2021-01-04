@@ -7,9 +7,8 @@ describe('SkillCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SkillCardComponent ]
-    })
-    .compileComponents();
+      declarations: [SkillCardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

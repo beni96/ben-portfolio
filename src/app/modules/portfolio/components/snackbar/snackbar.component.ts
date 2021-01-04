@@ -8,18 +8,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./snackbar.component.scss'],
   animations: [
     trigger('showSnackbar', [
-      state('hide', style({
-        opacity: 0,
-      })),
-      state('show', style({
-        opacity: 1,
-      })),
-      transition('show => hide', [
-        animate('0.2s')
-      ]),
-      transition('hide => show', [
-        animate('0.2s')
-      ]),
+      state(
+        'hide',
+        style({
+          opacity: 0,
+        })
+      ),
+      state(
+        'show',
+        style({
+          opacity: 1,
+        })
+      ),
+      transition('show => hide', [animate('0.2s')]),
+      transition('hide => show', [animate('0.2s')]),
     ]),
   ],
 })
@@ -37,6 +39,6 @@ export class SnackbarComponent implements OnInit {
   }
 
   dismissSnackbar() {
-    setTimeout(() => this.shouldShowSnackbar = false, 2000);
+    setTimeout(() => (this.shouldShowSnackbar = false), 2000);
   }
 }

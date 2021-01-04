@@ -9,6 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [AppComponent],
   imports: [BrowserModule, TranslateModule.forRoot(), AppRoutingModule, PortfolioModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,15 +1,15 @@
 import { AfterViewInit, Component, ElementRef, ViewChildren } from '@angular/core';
 
-const HOME_SECTIONS_INDEX = 0;
-const ABOUT_SECTIONS_INDEX = 1;
+const HOME_SECTION_INDEX = 0;
+const ABOUT_SECTION_INDEX = 1;
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements AfterViewInit {
-  aboutIndex = ABOUT_SECTIONS_INDEX;
+  aboutIndex = ABOUT_SECTION_INDEX;
   pagesScrollHeight: number[] = [];
   currentPage = 0;
 
@@ -24,13 +24,13 @@ export class PortfolioComponent implements AfterViewInit {
 
     document.addEventListener('scroll', () => {
       const scrollTop = document.scrollingElement.scrollTop;
-      this.currentPage = this.pagesScrollHeight.findIndex(pageScrollHeight => pageScrollHeight > scrollTop);
+      this.currentPage = this.pagesScrollHeight.findIndex((pageScrollHeight) => pageScrollHeight > scrollTop);
     });
   }
 
   scrollToPage(index: number) {
     const pages: ElementRef[] = this.pages.toArray();
-    const blockOption = index === HOME_SECTIONS_INDEX ? 'end' :  'start';
-    pages[index].nativeElement.scrollIntoView({block: blockOption});
+    const blockOption = index === HOME_SECTION_INDEX ? 'end' : 'start';
+    pages[index].nativeElement.scrollIntoView({ block: blockOption });
   }
 }

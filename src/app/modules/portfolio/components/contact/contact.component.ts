@@ -17,7 +17,7 @@ const EMAIL_FORMAT = '^[\\w]+(([\\w-+\\.]+[\\w])*)+@([\\w-]+\\.)+[\\w-]+[\\w-]*$
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
   form: FormGroup;
@@ -47,7 +47,7 @@ export class ContactComponent implements OnInit {
       const body: SendEmailRequest = {
         _subject: this.formControls.name.value,
         email: this.formControls.email.value,
-        message: this.formControls.message.value
+        message: this.formControls.message.value,
       };
       const request = this.contactService.generateRequest(body);
       this.contactService.sendRequest(request).subscribe(
@@ -58,14 +58,14 @@ export class ContactComponent implements OnInit {
           const snackbarLabel = response.ok ? 'Message sent' : 'Oops something went wrong';
           return this.snackbarLabelSubject$.next(snackbarLabel);
         },
-        () => this.snackbarLabelSubject$.next('Oops something went wrong'),
+        () => this.snackbarLabelSubject$.next('Oops something went wrong')
       );
     }
   }
 
   validateForm(): boolean {
     this.errorMessages = {};
-    this.fieldNames.forEach(fieldName => {
+    this.fieldNames.forEach((fieldName) => {
       const errors = this.formControls[fieldName].errors;
       if (errors) {
         const fieldErrorNames = Object.keys(errors);

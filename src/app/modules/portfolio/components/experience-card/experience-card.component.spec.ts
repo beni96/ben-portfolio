@@ -7,9 +7,8 @@ describe('ExperienceCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExperienceCardComponent ]
-    })
-    .compileComponents();
+      declarations: [ExperienceCardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

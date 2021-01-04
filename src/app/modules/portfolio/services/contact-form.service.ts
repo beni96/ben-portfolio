@@ -40,6 +40,10 @@ export class ContactService {
   }
 
   generateRequest(body: SendEmailRequest): IHttpRequest {
-    return { method: DEFAULT_METHOD, url: DEFAULT_URL, options: { body, headers: DEFAULT_HEADERS } };
+    return {
+      method: DEFAULT_METHOD,
+      url: DEFAULT_URL,
+      options: { body, headers: DEFAULT_HEADERS },
+    };
   }
 }

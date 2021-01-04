@@ -3,7 +3,7 @@
   <span class="logo">Ben Golan</span>
   <div class="pages-wrapper" [ngClass]="{ 'menu-opened': isMenuOpened }">
     <span
-      *ngFor="let page of pages; let index=index"
+      *ngFor="let page of pages; let index = index"
       class="page"
       [ngClass]="{ 'current-page': isCurrentPage(index) }"
       (click)="onPageClick(index)"
