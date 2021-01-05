@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   onPageClick(index: number) {
     this.currentPage = index;
     this.pageClicked.emit(index);
+    this.isMenuOpened = false;
   }
 
   isCurrentPage(index: number) {

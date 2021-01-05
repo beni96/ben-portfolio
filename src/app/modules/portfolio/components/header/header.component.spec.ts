@@ -27,11 +27,12 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit an event on clicking on a page', () => {
+  it('should emit an event on clicking on a page and close the menu', () => {
     const page = debugElement.queryAll(By.css('.page'))[3];
     page.triggerEventHandler('click', null);
     expect(component.currentPage).toEqual(3);
     expect(component.pageClicked.emit).toHaveBeenCalledWith(3);
+    expect(component.isMenuOpened).toBeFalsy();
   });
 
   it('should toggle menu value on clicking the menu icon', () => {
