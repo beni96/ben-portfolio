@@ -1,5 +1,7 @@
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-import { AfterViewInit, Component, EventEmitter, Output, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Inject, Output, ViewChildren } from '@angular/core';
+import { GoogleAnalyticsEvent } from '../../common/analytics-events';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 
 @Component({
   selector: 'app-home',
@@ -44,6 +46,8 @@ export class HomeComponent implements AfterViewInit {
 
   @ViewChildren('title') titleElements;
 
+  constructor(@Inject(FIREBASE_TOKEN) private firebaseService) {}
+
   ngAfterViewInit() {
     this.typeTitle(0);
   }
@@ -69,6 +73,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   onAboutClick() {
+    this.firebaseService.analytics().logEvent(GoogleAnalyticsEvent.HomeAboutButtonClick);
     this.aboutClicked.emit();
   }
 }

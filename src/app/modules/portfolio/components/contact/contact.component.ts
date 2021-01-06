@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { GoogleAnalyticsEvent } from '../../common/analytics-events';
 import { SendEmailRequest, SendEmailResponse } from '../../interfaces/contact';
 import { ContactService } from '../../services/contact-form.service';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 
 type FIELD_NAME_TYPE = 'name' | 'email' | 'message';
 
@@ -27,7 +29,7 @@ export class ContactComponent implements OnInit {
   fieldsValue = '';
   snackbarLabelSubject$ = new Subject<string>();
 
-  constructor(private formbuilder: FormBuilder, private contactService: ContactService) {}
+  constructor(@Inject(FIREBASE_TOKEN) private firebaseService, private formbuilder: FormBuilder, private contactService: ContactService) {}
 
   ngOnInit() {
     this.generateControls();
@@ -43,6 +45,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
+    this.firebaseService.analytics().logEvent(GoogleAnalyticsEvent.ContactFormSubmission);
     if (this.validateForm()) {
       const body: SendEmailRequest = {
         _subject: this.formControls.name.value,
@@ -73,6 +76,10 @@ export class ContactComponent implements OnInit {
         this.errorMessages[fieldName] = ERRORS_MESSAGES[fieldName][errorName];
       }
     });
+
+    if (!this.form.valid) {
+      this.firebaseService.analytics().logEvent(GoogleAnalyticsEvent.InvalidFormSubmission);
+    }
     return this.form.valid;
   }
 }

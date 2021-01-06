@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { GoogleAnalyticsEvent } from '../../common/analytics-events';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +16,8 @@ export class HeaderComponent implements OnInit {
   isScrolled = false;
   isMenuOpened = false;
 
+  constructor(@Inject(FIREBASE_TOKEN) private firebaseService) {}
+
   ngOnInit() {
     document.addEventListener('scroll', () => {
       return (this.isScrolled = window.pageYOffset > 0);
@@ -21,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onPageClick(index: number) {
+    this.firebaseService.analytics().logEvent(GoogleAnalyticsEvent.HeaderPageClick);
     this.currentPage = index;
     this.pageClicked.emit(index);
     this.isMenuOpened = false;
@@ -31,6 +36,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenu() {
+    this.firebaseService.analytics().logEvent(GoogleAnalyticsEvent.HeaderToggleMenuClick);
     this.isMenuOpened = !this.isMenuOpened;
   }
 }

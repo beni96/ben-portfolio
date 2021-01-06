@@ -4,7 +4,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { from } from 'rxjs';
+import { FirebaseStub } from '../../common/firebase-stub';
 import { ContactService } from '../../services/contact-form.service';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -12,13 +14,17 @@ describe('ContactComponent', () => {
   let fixture: ComponentFixture<ContactComponent>;
   let debugElement: DebugElement;
   let contactServiceMock: jasmine.SpyObj<ContactService>;
+  const firebaseMock = new FirebaseStub();
 
   beforeEach(async(() => {
     contactServiceMock = jasmine.createSpyObj('ContactService', ['generateRequest', 'sendRequest']);
 
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, HttpClientModule],
-      providers: [{ provide: ContactService, useValue: contactServiceMock }],
+      providers: [
+        { provide: ContactService, useValue: contactServiceMock },
+        { provide: FIREBASE_TOKEN, useValue: firebaseMock },
+      ],
       declarations: [ContactComponent],
     }).compileComponents();
   }));

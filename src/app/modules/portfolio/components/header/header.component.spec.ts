@@ -1,16 +1,20 @@
 import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { FirebaseStub } from '../../common/firebase-stub';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let debugElement: DebugElement;
+  const firebaseMock = new FirebaseStub();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
+      providers: [{ provide: FIREBASE_TOKEN, useValue: firebaseMock }],
     }).compileComponents();
   }));
 

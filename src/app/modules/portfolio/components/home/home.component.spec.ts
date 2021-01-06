@@ -2,17 +2,21 @@ import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FirebaseStub } from '../../common/firebase-stub';
+import { FIREBASE_TOKEN } from '../../tokens/firebase-token';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let debugElement: DebugElement;
+  const firebaseMock = new FirebaseStub();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
       declarations: [HomeComponent],
+      providers: [{ provide: FIREBASE_TOKEN, useValue: firebaseMock }],
     }).compileComponents();
   }));
 
