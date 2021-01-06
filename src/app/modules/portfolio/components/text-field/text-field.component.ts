@@ -11,4 +11,5 @@ export class TextFieldComponent {
   @Input() placeholder: string;
   @Input() errorMessage: string;
   @Input() value: string;
+  @Input() type: 'text' | 'email' = 'text';
 }
