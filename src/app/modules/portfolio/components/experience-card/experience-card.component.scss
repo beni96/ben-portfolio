@@ -117,6 +117,13 @@
     left: unset;
     right: 0;
   }
+
+  @media only screen and (max-width: 998px) {
+    .card-wrapper ul {
+      margin: unset;
+      padding: 0 24px 0 0;
+    }
+  }
 }
 
 @media only screen and (max-width: 998px) {

@@ -34,6 +34,8 @@ Design:
 
 * @beni96 - Ben Golan
 
+* This app is responsive and supports Rtl.
+
 <br/><br/>
 
 # Angular
